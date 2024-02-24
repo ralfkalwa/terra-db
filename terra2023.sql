@@ -8,7 +8,7 @@
 -- PHP-Version: 8.2.7
 
 -- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
+BEGIN TRANSACTION;
 -- SET time_zone = "+00:00";
 
 --
@@ -27,7 +27,7 @@ CREATE TABLE `aufgaben` (
   `loesung` text NOT NULL,
   `schwierigkeit` int(11) DEFAULT NULL,
   `hinweis` varchar(250) NOT NULL
-)
+);
 
 --
 -- Daten für Tabelle `aufgaben`
@@ -61,7 +61,7 @@ CREATE TABLE `BERG` (
   `JAHR` int(11) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL
-) 
+);
 
 --
 -- Daten für Tabelle `BERG`
@@ -195,7 +195,7 @@ CREATE TABLE `EBENE` (
   `E_NAME` varchar(25) DEFAULT NULL,
   `HOEHE` double(16,4) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL
-) 
+);
 
 --
 -- Daten für Tabelle `EBENE`
@@ -231,7 +231,7 @@ CREATE TABLE `FLUSS` (
   `BREITEU` double(16,4) DEFAULT NULL,
   `LAENGEM` double(16,4) DEFAULT NULL,
   `BREITEM` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `FLUSS`
@@ -384,7 +384,7 @@ INSERT INTO `FLUSS` (`F_NAME`, `FLUSS`, `SEE`, `MEER`, `LAENGE`, `LAENGEU`, `BRE
 CREATE TABLE `GEHT_UEBER_IN` (
   `MEER1` varchar(25) DEFAULT NULL,
   `MEER2` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEHT_UEBER_IN`
@@ -442,7 +442,7 @@ CREATE TABLE `GEO_BERG` (
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL,
   `B_NAME` varchar(20) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_BERG`
@@ -578,7 +578,7 @@ CREATE TABLE `GEO_EBENE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `E_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_EBENE`
@@ -637,7 +637,7 @@ CREATE TABLE `GEO_FLUSS` (
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(50) DEFAULT NULL,
   `F_NAME` varchar(20) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_FLUSS`
@@ -954,7 +954,7 @@ CREATE TABLE `GEO_INSEL` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `I_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_INSEL`
@@ -1056,7 +1056,7 @@ INSERT INTO `GEO_INSEL` (`LT_ID`, `L_ID`, `I_NAME`) VALUES
 ('SCH', 'GB', 'Mainland'),
 ('E', 'E', 'Mallorca'),
 ('M', 'M', 'Malta'),
-('MA', 'USA', 'Martha\'s_Vineyard'),
+('MA', 'USA', 'Martha''''s_Vineyard'),
 ('F', 'F', 'Martinique'),
 ('HI', 'USA', 'Maui'),
 ('KOM', 'KOM', 'Mayotta'),
@@ -1148,7 +1148,7 @@ CREATE TABLE `GEO_MEER` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `M_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_MEER`
@@ -1514,7 +1514,7 @@ CREATE TABLE `GEO_SEE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `S_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_SEE`
@@ -1606,7 +1606,7 @@ INSERT INTO `GEO_SEE` (`id`, `LT_ID`, `L_ID`, `S_NAME`) VALUES
 (83, 'MB', 'CDN', 'Lake_Winnipeg'),
 (84, 'NH', 'USA', 'Lake_Winnipesaukee'),
 (85, 'ZRE', 'ZRE', 'Leopold2-See'),
-(86, 'CAM', 'CAM', 'M\'Bakau-Stausee'),
+(86, 'CAM', 'CAM', 'M''''Bakau-Stausee'),
 (87, 'NOR', 'AUS', 'Mackay_See'),
 (88, 'WES', 'AUS', 'Mackay_See'),
 (89, 'AB', 'S', 'Maelarsee'),
@@ -1683,7 +1683,7 @@ CREATE TABLE `GEO_WUESTE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `W_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `GEO_WUESTE`
@@ -1750,7 +1750,7 @@ CREATE TABLE `HAT_SITZ_IN` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `HAT_SITZ_IN`
@@ -1772,7 +1772,7 @@ INSERT INTO `HAT_SITZ_IN` (`ST_NAME`, `LT_ID`, `L_ID`, `ABKUERZUNG`) VALUES
 (NULL, NULL, NULL, 'CER'),
 (NULL, NULL, NULL, 'CIPEC'),
 ('London', 'E', 'GB', 'COMMONWEALTH'),
-(NULL, NULL, NULL, 'Conseil_de_l\'Ent'),
+(NULL, NULL, NULL, 'Conseil_de_l'''-'Ent'),
 ('Addis_Abeba', 'ETH', 'ETH', 'ECA'),
 ('Genf', 'CH', 'Ch', 'ECE'),
 ('Santiago de Chile', 'RCH', 'RCH', 'ECLAC'),
@@ -1832,7 +1832,7 @@ CREATE TABLE `INSEL` (
   `FLAECHE` double(16,4) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `INSEL`
@@ -1933,7 +1933,7 @@ INSERT INTO `INSEL` (`I_NAME`, `INSELGRUPPE`, `FLAECHE`, `LAENGE`, `BREITE`) VAL
 ('Mainland', 'Orkney_Inseln', 492.0000, -3.1000, 59.2000),
 ('Mallorca', 'Balearen', 3618.0000, 3.0000, 39.3000),
 ('Malta', NULL, 315.0000, 14.1000, 36.0000),
-('Martha\'s_Vineyard', NULL, 231.7500, -70.4000, 41.5000),
+('Martha''''s_Vineyard', NULL, 231.7500, -70.4000, 41.5000),
 ('Martinique', 'Kleine_Antillen', 1100.0000, -62.0000, 14.5000),
 ('Maui', 'Hawaii_Inseln', 1886.0000, -156.2000, 20.5000),
 ('Mayotta', 'Komoren', 374.0000, 45.2000, -12.7000),
@@ -2024,7 +2024,7 @@ CREATE TABLE `IST_BENACHBART_ZU` (
   `id` int(11) NOT NULL,
   `LAND1` varchar(4) DEFAULT NULL,
   `LAND2` varchar(4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `IST_BENACHBART_ZU`
@@ -2374,7 +2374,7 @@ CREATE TABLE `IST_MITGLIED_VON` (
   `L_ID` varchar(4) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL,
   `ART` varchar(25) DEFAULT NULL
-) 
+);
 
 --
 -- Daten für Tabelle `IST_MITGLIED_VON`
@@ -2432,7 +2432,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('BDS', 'SELA', 'volles_Mitglied'),
 ('BDS', 'UNO', 'volles_Mitglied'),
 ('BF', 'CEAO', 'volles_Mitglied'),
-('BF', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('BF', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('BF', 'ECOWAS', 'volles_Mitglied'),
 ('BF', 'EWG', 'assoziert'),
 ('BF', 'OAU', 'volles_Mitglied'),
@@ -2495,7 +2495,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('CH', 'ER', 'volles_Mitglied'),
 ('CH', 'OECD', 'volles_Mitglied'),
 ('CI', 'CEAO', 'volles_Mitglied'),
-('CI', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('CI', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('CI', 'ECOWAS', 'volles_Mitglied'),
 ('CI', 'EWG', 'assoziert'),
 ('CI', 'OAU', 'volles_Mitglied'),
@@ -2615,7 +2615,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('FL', 'ER', 'volles_Mitglied'),
 ('FL', 'UNO', 'volles_Mitglied'),
 ('FSM', 'UNO', 'volles_Mitglied'),
-('GAB', 'Conseil_de_l\'Ent', 'assoziert'),
+('GAB', 'Conseil_de_l''''Ent', 'assoziert'),
 ('GAB', 'EWG', 'assoziert'),
 ('GAB', 'OAU', 'volles_Mitglied'),
 ('GAB', 'OPEC', 'volles_Mitglied'),
@@ -2859,7 +2859,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('RB', 'GATT', 'assoziert'),
 ('RB', 'OAU', 'volles_Mitglied'),
 ('RB', 'UNO', 'volles_Mitglied'),
-('RCA', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('RCA', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('RCA', 'EWG', 'assoziert'),
 ('RCA', 'OAU', 'volles_Mitglied'),
 ('RCA', 'UDEAC', 'volles_Mitglied'),
@@ -2907,7 +2907,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('ROK', 'UNO', 'volles_Mitglied'),
 ('RPA', 'OAU', 'volles_Mitglied'),
 ('RPA', 'UNO', 'volles_Mitglied'),
-('RPB', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('RPB', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('RPB', 'EWG', 'assoziert'),
 ('RPB', 'GATT', 'assoziert'),
 ('RPB', 'OAU', 'volles_Mitglied'),
@@ -2962,7 +2962,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('SME', 'SELA', 'volles_Mitglied'),
 ('SME', 'UNO', 'volles_Mitglied'),
 ('SN', 'CEAO', 'volles_Mitglied'),
-('SN', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('SN', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('SN', 'ECOWAS', 'volles_Mitglied'),
 ('SN', 'EWG', 'assoziert'),
 ('SN', 'OAU', 'volles_Mitglied'),
@@ -2979,12 +2979,12 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 ('SY', 'OAU', 'volles_Mitglied'),
 ('SY', 'UNO', 'volles_Mitglied'),
 ('SYR', 'UNO', 'volles_Mitglied'),
-('TCH', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('TCH', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('TCH', 'EWG', 'assoziert'),
 ('TCH', 'OAU', 'volles_Mitglied'),
 ('TCH', 'UMOA', 'volles_Mitglied'),
 ('TCH', 'UNO', 'volles_Mitglied'),
-('TG', 'Conseil_de_l\'Ent', 'volles_Mitglied'),
+('TG', 'Conseil_de_l''''Ent', 'volles_Mitglied'),
 ('TG', 'ECOWAS', 'volles_Mitglied'),
 ('TG', 'EWG', 'assoziert'),
 ('TG', 'GATT', 'assoziert'),
@@ -3098,7 +3098,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 CREATE TABLE `KONTINENT` (
   `K_NAME` varchar(10) NOT NULL DEFAULT '',
   `FLAECHE` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `KONTINENT`
@@ -3124,7 +3124,7 @@ CREATE TABLE `LAND` (
   `FLAECHE` double(16,4) DEFAULT NULL,
   `HAUPTSTADT` varchar(25) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `LAND`
@@ -3290,11 +3290,11 @@ INSERT INTO `LAND` (`L_ID`, `L_NAME`, `EINWOHNER`, `FLAECHE`, `HAUPTSTADT`, `LT_
 ('SWA', 'Namibia', 2534000.0000, 824292.0000, 'Windhuk', 'SWA'),
 ('SY', 'Seychellen', 95843.0000, 455.0000, 'Victoria', 'SY'),
 ('SYR', 'Syrien', 18270000.0000, 185180.0000, 'Damaskus', 'SYR'),
-('TCH', 'Tschad', 14900000.0000, 1284000.0000, 'N\'Djamena', 'TCH'),
+('TCH', 'Tschad', 14900000.0000, 1284000.0000, 'N''''Djamena', 'TCH'),
 ('TG', 'Togo', 7798000.0000, 56785.0000, 'Lomé', 'TG'),
 ('THA', 'Thailand', 69040000.0000, 513115.0000, 'Bangkok', 'THA'),
 ('TN', 'Tunesien', 11530000.0000, 163610.0000, 'Tunis', 'TN'),
-('TON', 'Tonga', 108020.0000, 750.0000, 'Nuku\'alofa', 'TON'),
+('TON', 'Tonga', 108020.0000, 750.0000, 'Nuku''''alofa', 'TON'),
 ('TR', 'Tuerkei', 79810000.0000, 774815.0000, 'Ankara', 'TR'),
 ('TT', 'Trinidad_und_Tobago', 1369000.0000, 5128.0000, 'Port_of_Spain', 'TT'),
 ('TUV', 'Tuvalu', 11192.0000, 25.0000, 'Vaiaku', 'TUV'),
@@ -3311,7 +3311,7 @@ INSERT INTO `LAND` (`L_ID`, `L_NAME`, `EINWOHNER`, `FLAECHE`, `HAUPTSTADT`, `LT_
 ('WAL', 'Sierra_Leone', 7557000.0000, 71740.0000, 'Freetown', 'WAL'),
 ('WAN', 'Nigeria', 190900000.0000, 923768.0000, 'Abuja', 'WAN'),
 ('WD', 'Dominika', 73925.0000, 751.0000, 'Roseau', 'WD'),
-('WG', 'Grenada', 107825.0000, 344.0000, 'Saint_George\'s', 'WG'),
+('WG', 'Grenada', 107825.0000, 344.0000, 'Saint_George''''s', 'WG'),
 ('WL', 'Saint_Lucia', 178844.0000, 622.0000, 'Castries', 'WL'),
 ('WS', 'Westsamoa', 196440.0000, 2842.0000, 'Apia', 'WS'),
 ('WV', 'Saint_Vincent', 109897.0000, 388.0000, 'Kingstown', 'WV'),
@@ -3336,7 +3336,7 @@ CREATE TABLE `LANDTEIL` (
   `EINWOHNER` double(16,4) DEFAULT NULL,
   `LAGE` char(2) DEFAULT NULL,
   `HAUPTSTADT` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `LANDTEIL`
@@ -3533,7 +3533,7 @@ INSERT INTO `LANDTEIL` (`id`, `LT_ID`, `L_ID`, `LT_NAME`, `EINWOHNER`, `LAGE`, `
 (188, 'GUY', 'GUY', 'Guyana', 7.7780, 'Z', 'Georgetown'),
 (189, 'H', 'H', 'Ungarn', 97.9800, 'Z', 'Budapest'),
 (190, 'HON', 'HON', 'Honduras', 92.6500, 'Z', 'Tegucigalpa'),
-(191, 'ABR', 'I', 'Abbruzzen', 13.2200, 'Z', 'L\'Aquila'),
+(191, 'ABR', 'I', 'Abbruzzen', 13.2200, 'Z', 'L''''Aquila'),
 (192, 'AOS', 'I', 'Aostatal', 1.2680, 'NW', 'Aosta'),
 (193, 'APU', 'I', 'Apulien', 40.6400, 'SO', 'Bari'),
 (194, 'BAS', 'I', 'Basilicata', 5.7030, 'SO', 'Potenza'),
@@ -3922,7 +3922,7 @@ CREATE TABLE `LIEGT_AN` (
   `F_NAME` varchar(20) DEFAULT NULL,
   `S_NAME` varchar(25) DEFAULT NULL,
   `M_NAME` varchar(25) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `LIEGT_AN`
@@ -4296,7 +4296,7 @@ INSERT INTO `LIEGT_AN` (`id`, `ST_NAME`, `LT_ID`, `L_ID`, `F_NAME`, `S_NAME`, `M
 CREATE TABLE `MEER` (
   `M_NAME` varchar(25) NOT NULL DEFAULT '',
   `TIEFE` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `MEER`
@@ -4344,7 +4344,7 @@ CREATE TABLE `ORGANISATION` (
   `id` int(11) NOT NULL,
   `O_NAME` varchar(70) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `ORGANISATION`
@@ -4365,7 +4365,7 @@ INSERT INTO `ORGANISATION` (`id`, `O_NAME`, `ABKUERZUNG`) VALUES
 (12, 'Europäische Post- und Fernmeldeministerkonferenz', 'CEPT'),
 (13, 'Intergouvernementaler Rat der kupferexportierenden Länder', 'CIPEC'),
 (14, 'Commonwealth', 'COMMONWEALTH'),
-(15, 'Conseil de l\'Ent', 'Conseil_de_l\'Ent'),
+(15, 'Conseil de l''''Ent', 'Conseil_de_l''''Ent'),
 (16, 'Wirtschaftskommission für Afrika der UNO', 'ECA'),
 (17, 'Wirtschaftskommission für Europa der UNO', 'ECE'),
 (18, 'Wirtschaftskommission für Lateinamerika und der Karibik der UNO', 'ECLAC'),
@@ -4419,7 +4419,7 @@ CREATE TABLE `SEE` (
   `S_NAME` varchar(25) DEFAULT NULL,
   `TIEFE` double(16,4) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `SEE`
@@ -4480,7 +4480,7 @@ INSERT INTO `SEE` (`S_NAME`, `TIEFE`, `FLAECHE`) VALUES
 ('Lake_Winnipeg', 21.0000, 24514.0000),
 ('Lake_Winnipesaukee', NULL, 186.5000),
 ('Leopold2-See', NULL, NULL),
-('M\'Bakau-Stausee', NULL, NULL),
+('M''''Bakau-Stausee', NULL, NULL),
 ('Mackay_See', NULL, NULL),
 ('Maelarsee', 60.0000, 1140.0000),
 ('Makarikarisalzpfanne', NULL, NULL),
@@ -4533,7 +4533,7 @@ CREATE TABLE `STADT` (
   `EINWOHNER` int(11) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `STADT`
@@ -4882,7 +4882,7 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 ('Kuopio', 'SF', 'KUO', 117331, 625.0000, 274.0000),
 ('Kuwait_City', 'KT', 'KT', 63600, 293.0000, 473.0000),
 ('Kyoto', 'J', 'J', 1475000, 350.0000, 1.3540),
-('L\'Aquila', 'I', 'ABR', 69605, 422.4000, 132.0000),
+('L''''Aquila', 'I', 'ABR', 69605, 422.4000, 132.0000),
 ('Lagos', 'WAN', 'WAN', 31049, 63.0000, 33.0000),
 ('Lahti', 'SF', 'HAE', 119098, 605.0000, 252.0000),
 ('Landsberg', 'D', 'BAY', 27712, 480.0000, 100.0000),
@@ -4988,7 +4988,7 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 ('Muenchen', 'D', 'BAY', 1450000, 481.0000, 113.0000),
 ('Murmansk', 'RUS', 'RSF', 303754, 685.8000, 330.3000),
 ('Münster', 'D', 'NRW', 310039, 500.0000, 84.5000),
-('N\'Djamena', 'TCH', 'TCH', 530000, 121.0000, 150.0000),
+('N''''Djamena', 'TCH', 'TCH', 530000, 121.0000, 150.0000),
 ('Nairobi', 'EAK', 'EAK', 3134000, -12.0000, 365.0000),
 ('Namur', 'B', 'NAM', 110175, 503.0000, 45.0000),
 ('Nanchang', 'VRC', 'JXI', 1420000, 284.0000, 1.1550),
@@ -5098,8 +5098,8 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 ('Saarbruecken', 'D', 'SAR', 178151, 491.0000, 66.0000),
 ('Saarlouis', 'D', 'SAR', 37770, 490.0000, 60.0000),
 ('Sacramento', 'USA', 'CA', 501901, 383.0000, -1.2150),
-('Saint_George\'s', 'WG', 'WG', 2596, 124.0000, -614.0000),
-('Saint_John\'s', 'AUB', 'AUB', 21926, 173.0000, -615.0000),
+('Saint_George''''s', 'WG', 'WG', 2596, 124.0000, -614.0000),
+('Saint_John''''s', 'AUB', 'AUB', 21926, 173.0000, -615.0000),
 ('Salem', 'USA', 'OR', 11160, 445.0000, -1.2310),
 ('Salisbury', 'ZW', 'ZW', 45000, -175.0000, 312.0000),
 ('Salta', 'RA', 'SAL', 1333000, -245.0000, -653.0000),
@@ -5107,7 +5107,7 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 ('Salt_Lake_City', 'USA', 'UT', 200544, 404.0000, -1.1200),
 ('Salvador', 'BR', 'BAH', 2677000, -130.0000, -383.0000),
 ('Salzburg', 'A', 'SAL', 152367, 474.9000, 132.0000),
-('Sana\'a', 'JEM', 'JEM', 3937000, 152.1000, 441.1000),
+('Sana''''a', 'JEM', 'JEM', 3937000, 152.1000, 441.1000),
 ('Santa_Fe', 'USA', 'NM', 83776, 354.0000, -1.0600),
 ('Santa_Rosa', 'RA', 'LAP', 284670, -364.0000, -642.0000),
 ('Santiago', 'RCH', 'RCH', 5614000, -333.0000, -705.0000),
@@ -5152,7 +5152,7 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 ('Srinagar', 'IND', 'JAK', 1181000, 340.0000, 743.0000),
 ('St.Poelten', 'A', 'NIE', 154045, 481.3000, 153.8000),
 ('St._Helier', 'GB', 'GBJ', 33500, 491.5000, -20.8000),
-('St._John\'s', 'CDN', 'NF', 113948, 473.0000, -525.0000),
+('St._John''''s', 'CDN', 'NF', 113948, 473.0000, -525.0000),
 ('St._Louis', 'USA', 'MO', 318069, 385.0000, -902.0000),
 ('St._Paul', 'USA', 'MN', 306621, 450.0000, -930.0000),
 ('St._Peter_Port', 'GB', 'GBG', 18207, 492.9000, -23.5000),
@@ -5292,7 +5292,7 @@ CREATE TABLE `UMFASST` (
   `L_ID` varchar(4) DEFAULT NULL,
   `K_NAME` varchar(10) DEFAULT NULL,
   `PROZENT` double(16,4) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `UMFASST`
@@ -5501,7 +5501,7 @@ CREATE TABLE `WUESTE` (
   `W_NAME` varchar(25) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL,
   `WUESTENART` varchar(17) DEFAULT NULL
-) 
+) ;
 
 --
 -- Daten für Tabelle `WUESTE`
