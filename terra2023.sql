@@ -33,7 +33,7 @@ CREATE TABLE `aufgaben` (
   `loesung` text NOT NULL,
   `schwierigkeit` int(11) DEFAULT NULL,
   `hinweis` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+)
 
 --
 -- Daten für Tabelle `aufgaben`
@@ -67,7 +67,7 @@ CREATE TABLE `BERG` (
   `JAHR` int(11) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `BERG`
@@ -201,7 +201,7 @@ CREATE TABLE `EBENE` (
   `E_NAME` varchar(25) DEFAULT NULL,
   `HOEHE` double(16,4) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `EBENE`
@@ -237,7 +237,7 @@ CREATE TABLE `FLUSS` (
   `BREITEU` double(16,4) DEFAULT NULL,
   `LAENGEM` double(16,4) DEFAULT NULL,
   `BREITEM` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `FLUSS`
@@ -390,7 +390,7 @@ INSERT INTO `FLUSS` (`F_NAME`, `FLUSS`, `SEE`, `MEER`, `LAENGE`, `LAENGEU`, `BRE
 CREATE TABLE `GEHT_UEBER_IN` (
   `MEER1` varchar(25) DEFAULT NULL,
   `MEER2` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEHT_UEBER_IN`
@@ -448,7 +448,7 @@ CREATE TABLE `GEO_BERG` (
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL,
   `B_NAME` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_BERG`
@@ -584,7 +584,7 @@ CREATE TABLE `GEO_EBENE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `E_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_EBENE`
@@ -643,7 +643,7 @@ CREATE TABLE `GEO_FLUSS` (
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(50) DEFAULT NULL,
   `F_NAME` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_FLUSS`
@@ -960,7 +960,7 @@ CREATE TABLE `GEO_INSEL` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `I_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_INSEL`
@@ -1154,7 +1154,7 @@ CREATE TABLE `GEO_MEER` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `M_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_MEER`
@@ -1520,7 +1520,7 @@ CREATE TABLE `GEO_SEE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `S_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_SEE`
@@ -1689,7 +1689,7 @@ CREATE TABLE `GEO_WUESTE` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `W_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `GEO_WUESTE`
@@ -1756,7 +1756,7 @@ CREATE TABLE `HAT_SITZ_IN` (
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `HAT_SITZ_IN`
@@ -1838,7 +1838,7 @@ CREATE TABLE `INSEL` (
   `FLAECHE` double(16,4) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `INSEL`
@@ -2030,7 +2030,7 @@ CREATE TABLE `IST_BENACHBART_ZU` (
   `id` int(11) NOT NULL,
   `LAND1` varchar(4) DEFAULT NULL,
   `LAND2` varchar(4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `IST_BENACHBART_ZU`
@@ -2380,7 +2380,7 @@ CREATE TABLE `IST_MITGLIED_VON` (
   `L_ID` varchar(4) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL,
   `ART` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `IST_MITGLIED_VON`
@@ -3104,7 +3104,7 @@ INSERT INTO `IST_MITGLIED_VON` (`L_ID`, `ABKUERZUNG`, `ART`) VALUES
 CREATE TABLE `KONTINENT` (
   `K_NAME` varchar(10) NOT NULL DEFAULT '',
   `FLAECHE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `KONTINENT`
@@ -3130,7 +3130,7 @@ CREATE TABLE `LAND` (
   `FLAECHE` double(16,4) DEFAULT NULL,
   `HAUPTSTADT` varchar(25) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `LAND`
@@ -3342,7 +3342,7 @@ CREATE TABLE `LANDTEIL` (
   `EINWOHNER` double(16,4) DEFAULT NULL,
   `LAGE` char(2) DEFAULT NULL,
   `HAUPTSTADT` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `LANDTEIL`
@@ -3928,7 +3928,7 @@ CREATE TABLE `LIEGT_AN` (
   `F_NAME` varchar(20) DEFAULT NULL,
   `S_NAME` varchar(25) DEFAULT NULL,
   `M_NAME` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `LIEGT_AN`
@@ -4302,7 +4302,7 @@ INSERT INTO `LIEGT_AN` (`id`, `ST_NAME`, `LT_ID`, `L_ID`, `F_NAME`, `S_NAME`, `M
 CREATE TABLE `MEER` (
   `M_NAME` varchar(25) NOT NULL DEFAULT '',
   `TIEFE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `MEER`
@@ -4350,7 +4350,7 @@ CREATE TABLE `ORGANISATION` (
   `id` int(11) NOT NULL,
   `O_NAME` varchar(70) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `ORGANISATION`
@@ -4425,7 +4425,7 @@ CREATE TABLE `SEE` (
   `S_NAME` varchar(25) DEFAULT NULL,
   `TIEFE` double(16,4) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `SEE`
@@ -4539,7 +4539,7 @@ CREATE TABLE `STADT` (
   `EINWOHNER` int(11) DEFAULT NULL,
   `BREITE` double(16,4) DEFAULT NULL,
   `LAENGE` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `STADT`
@@ -5298,7 +5298,7 @@ CREATE TABLE `UMFASST` (
   `L_ID` varchar(4) DEFAULT NULL,
   `K_NAME` varchar(10) DEFAULT NULL,
   `PROZENT` double(16,4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `UMFASST`
@@ -5507,7 +5507,7 @@ CREATE TABLE `WUESTE` (
   `W_NAME` varchar(25) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL,
   `WUESTENART` varchar(17) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci PACK_KEYS=1;
+) 
 
 --
 -- Daten für Tabelle `WUESTE`
