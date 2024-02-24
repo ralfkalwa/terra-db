@@ -22,7 +22,7 @@ BEGIN TRANSACTION;
 --
 
 CREATE TABLE `aufgaben` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `aufgabe` text NOT NULL,
   `loesung` text NOT NULL,
   `schwierigkeit` int(11) DEFAULT NULL,
@@ -438,7 +438,7 @@ INSERT INTO `GEHT_UEBER_IN` (`MEER1`, `MEER2`) VALUES
 --
 
 CREATE TABLE `GEO_BERG` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL,
   `B_NAME` varchar(20) DEFAULT NULL
@@ -633,7 +633,7 @@ INSERT INTO `GEO_EBENE` (`LT_ID`, `L_ID`, `E_NAME`) VALUES
 --
 
 CREATE TABLE `GEO_FLUSS` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_ID` varchar(50) DEFAULT NULL,
   `F_NAME` varchar(20) DEFAULT NULL
@@ -1144,7 +1144,7 @@ INSERT INTO `GEO_INSEL` (`LT_ID`, `L_ID`, `I_NAME`) VALUES
 --
 
 CREATE TABLE `GEO_MEER` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `M_NAME` varchar(25) DEFAULT NULL
@@ -1510,7 +1510,7 @@ INSERT INTO `GEO_MEER` (`id`, `LT_ID`, `L_ID`, `M_NAME`) VALUES
 --
 
 CREATE TABLE `GEO_SEE` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `S_NAME` varchar(25) DEFAULT NULL
@@ -2021,7 +2021,7 @@ INSERT INTO `INSEL` (`I_NAME`, `INSELGRUPPE`, `FLAECHE`, `LAENGE`, `BREITE`) VAL
 --
 
 CREATE TABLE `IST_BENACHBART_ZU` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `LAND1` varchar(4) DEFAULT NULL,
   `LAND2` varchar(4) DEFAULT NULL
 ) ;
@@ -3329,7 +3329,7 @@ INSERT INTO `LAND` (`L_ID`, `L_NAME`, `EINWOHNER`, `FLAECHE`, `HAUPTSTADT`, `LT_
 --
 
 CREATE TABLE `LANDTEIL` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
   `LT_NAME` varchar(50) NOT NULL DEFAULT '',
@@ -3915,7 +3915,7 @@ INSERT INTO `LANDTEIL` (`id`, `LT_ID`, `L_ID`, `LT_NAME`, `EINWOHNER`, `LAGE`, `
 --
 
 CREATE TABLE `LIEGT_AN` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `ST_NAME` varchar(25) DEFAULT NULL,
   `LT_ID` varchar(4) DEFAULT NULL,
   `L_ID` varchar(4) DEFAULT NULL,
@@ -4341,7 +4341,7 @@ INSERT INTO `MEER` (`M_NAME`, `TIEFE`) VALUES
 --
 
 CREATE TABLE `ORGANISATION` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `O_NAME` varchar(70) DEFAULT NULL,
   `ABKUERZUNG` varchar(20) DEFAULT NULL
 ) ;
@@ -5288,7 +5288,7 @@ INSERT INTO `STADT` (`ST_NAME`, `L_ID`, `LT_ID`, `EINWOHNER`, `BREITE`, `LAENGE`
 --
 
 CREATE TABLE `UMFASST` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `L_ID` varchar(4) DEFAULT NULL,
   `K_NAME` varchar(10) DEFAULT NULL,
   `PROZENT` double(16,4) DEFAULT NULL
@@ -5497,7 +5497,7 @@ INSERT INTO `UMFASST` (`id`, `L_ID`, `K_NAME`, `PROZENT`) VALUES
 --
 
 CREATE TABLE `WUESTE` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `W_NAME` varchar(25) DEFAULT NULL,
   `FLAECHE` double(16,4) DEFAULT NULL,
   `WUESTENART` varchar(17) DEFAULT NULL
@@ -5540,194 +5540,15 @@ INSERT INTO `WUESTE` (`id`, `W_NAME`, `FLAECHE`, `WUESTENART`) VALUES
 (30, 'Westl._Grosser_Erg', 40000.0000, 'Sandwueste');
 
 --
--- Indizes der exportierten Tabellen
+-- Indizes für die exportierten Tabelle
 --
 
---
--- Indizes für die Tabelle `aufgaben`
---
-ALTER TABLE `aufgaben`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `BERG`
---
-ALTER TABLE `BERG`
-  ADD UNIQUE KEY `B_NAME` (`B_NAME`);
-
---
--- Indizes für die Tabelle `EBENE`
---
-ALTER TABLE `EBENE`
-  ADD UNIQUE KEY `E_NAME` (`E_NAME`);
-
---
--- Indizes für die Tabelle `FLUSS`
---
-ALTER TABLE `FLUSS`
-  ADD PRIMARY KEY (`F_NAME`),
-  ADD UNIQUE KEY `F_NAME` (`F_NAME`);
-
---
--- Indizes für die Tabelle `GEO_BERG`
---
-ALTER TABLE `GEO_BERG`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `GEO_FLUSS`
---
-ALTER TABLE `GEO_FLUSS`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `GEO_MEER`
---
-ALTER TABLE `GEO_MEER`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `GEO_SEE`
---
-ALTER TABLE `GEO_SEE`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `INSEL`
---
-ALTER TABLE `INSEL`
-  ADD PRIMARY KEY (`I_NAME`),
-  ADD UNIQUE KEY `I_NAME` (`I_NAME`);
-
---
--- Indizes für die Tabelle `IST_BENACHBART_ZU`
---
-ALTER TABLE `IST_BENACHBART_ZU`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `KONTINENT`
---
-ALTER TABLE `KONTINENT`
-  ADD UNIQUE KEY `K_NAME` (`K_NAME`);
-
---
--- Indizes für die Tabelle `LAND`
---
-ALTER TABLE `LAND`
-  ADD UNIQUE KEY `L_ID_2` (`L_ID`),
-  ADD UNIQUE KEY `L_ID_3` (`L_ID`),
-  ADD KEY `L_ID` (`L_ID`);
-
---
--- Indizes für die Tabelle `LANDTEIL`
---
-ALTER TABLE `LANDTEIL`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `LIEGT_AN`
---
-ALTER TABLE `LIEGT_AN`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `MEER`
---
-ALTER TABLE `MEER`
-  ADD UNIQUE KEY `M_NAME` (`M_NAME`);
-
---
--- Indizes für die Tabelle `ORGANISATION`
---
-ALTER TABLE `ORGANISATION`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `STADT`
---
-ALTER TABLE `STADT`
-  ADD UNIQUE KEY `ST_NAME` (`ST_NAME`);
-
---
--- Indizes für die Tabelle `UMFASST`
---
-ALTER TABLE `UMFASST`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indizes für die Tabelle `WUESTE`
---
-ALTER TABLE `WUESTE`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT für exportierte Tabellen
---
-
---
--- AUTO_INCREMENT für Tabelle `aufgaben`
---
-ALTER TABLE `aufgaben`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT für Tabelle `GEO_BERG`
---
-ALTER TABLE `GEO_BERG`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
-
---
--- AUTO_INCREMENT für Tabelle `GEO_FLUSS`
---
-ALTER TABLE `GEO_FLUSS`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
-
---
--- AUTO_INCREMENT für Tabelle `GEO_MEER`
---
-ALTER TABLE `GEO_MEER`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
-
---
--- AUTO_INCREMENT für Tabelle `GEO_SEE`
---
-ALTER TABLE `GEO_SEE`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
-
---
--- AUTO_INCREMENT für Tabelle `IST_BENACHBART_ZU`
---
-ALTER TABLE `IST_BENACHBART_ZU`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=349;
-
---
--- AUTO_INCREMENT für Tabelle `LANDTEIL`
---
-ALTER TABLE `LANDTEIL`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=565;
-
---
--- AUTO_INCREMENT für Tabelle `LIEGT_AN`
---
-ALTER TABLE `LIEGT_AN`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=358;
-
---
--- AUTO_INCREMENT für Tabelle `ORGANISATION`
---
-ALTER TABLE `ORGANISATION`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
-
---
--- AUTO_INCREMENT für Tabelle `UMFASST`
---
-ALTER TABLE `UMFASST`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
-
---
--- AUTO_INCREMENT für Tabelle `WUESTE`
---
-ALTER TABLE `WUESTE`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-COMMIT;
+CREATE UNIQUE INDEX ix_b_name ON BERG(`B_NAME`);
+CREATE UNIQUE INDEX ix_e_name ON EBENE(`E_NAME`);
+CREATE UNIQUE INDEX ix_f_name ON FLUSS(`F_NAME`);
+CREATE UNIQUE INDEX ix_i_name ON INSEL(`I_NAME`);
+CREATE UNIQUE INDEX ix_k_name ON KONTINENT(`K_NAME`);
+CREATE UNIQUE INDEX ix_l_id2 ON LAND(`L_ID`);
+CREATE UNIQUE INDEX ix_l_id3 ON LAND(`L_ID`);
+CREATE UNIQUE INDEX ix_m_name ON MEER(`M_NAME`);
+CREATE UNIQUE INDEX ix_st_name ON STADT(`ST_NAME`);
