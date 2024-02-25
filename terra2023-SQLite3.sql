@@ -1,21 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Erstellungszeit: 30. Okt 2023 um 06:42
--- Server-Version: 10.11.4-MariaDB-1~deb12u1
--- PHP-Version: 8.2.7
 
--- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 BEGIN TRANSACTION;
--- SET time_zone = "+00:00";
-
 --
 -- Datenbank: `terra2023`
 --
-
--- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `aufgaben`
@@ -35,13 +22,13 @@ CREATE TABLE `aufgaben` (
 
 INSERT INTO `aufgaben` (`id`, `aufgabe`, `loesung`, `schwierigkeit`, `hinweis`) VALUES
 (1, 'Nenne alle Städte in Deutschland, die über eine Million Einwohner haben!', 'SELECT * FROM STADT WHERE EINWOHNER > 1000000 AND L_ID = \"D\"', 2, ''),
-(2, 'Finde alle Länder, die eine Hauptstadt mit dem Anfangsbuchstaben A haben. ', '\r\nSELECT * FROM LAND WHERE left(HAUPTSTADT,1)=\"A\" ', 3, 'Benutze \"left()\"!'),
+(2, 'Finde alle Länder, die eine Hauptstadt mit dem Anfangsbuchstaben A haben. ', '\r\nSELECT * FROM LAND WHERE substr(HAUPTSTADT,1,1)=\"A\" ', 3, 'Benutze \"substr()\"!'),
 (3, 'Finde alle Inseln mit \"ka\" im Namen!', 'SELECT * FROM INSEL WHERE I_NAME LIKE \"%ka%\"', 4, 'Denke an die %!'),
 (4, 'Nenne alle Berge, die größer als 3000 Meter sind!', 'SELECT * FROM BERG WHERE HOEHE > 3000', 1, ''),
 (5, 'Liste alle eindeutigen Länderkürzel, alphabetisch sortiert!', 'SELECT DISTINCT L_ID FROM LAND ORDER BY L_ID', 5, 'Benutze anstelle von * DISTINCT'),
-(6, 'Nenne alle Wüsten die mit E anfangen!', 'SELECT * FROM WUESTE WHERE left(W_NAME,1) = \"E\"', 3, 'Spalte der Tabelle WUESTE: W_NAME'),
+(6, 'Nenne alle Wüsten die mit E anfangen!', 'SELECT * FROM WUESTE WHERE substr(W_NAME,1,1) = \"E\"', 3, 'Spalte der Tabelle WUESTE: W_NAME'),
 (7, 'Nenne alle Städte mit 4008000 Einwohnern oder mehr!', 'SELECT * FROM STADT WHERE EINWOHNER >= 4008000', 2, 'Nutze Größer-Gleich-Zeichen!'),
-(8, 'Nenne alle Flüsse die mit Z anfangen und eine Länge von 1030 haben!\r\n', 'SELECT * FROM FLUSS WHERE left(FLUSS, 1) = \"Z\" AND LAENGE = 1030', 4, 'Nutze \"(Spaltenname, 1)\"!'),
+(8, 'Nenne alle Flüsse die mit Z anfangen und eine Länge von 1030 haben!\r\n', 'SELECT * FROM FLUSS WHERE substr(FLUSS, 1, 1) = \"Z\" AND LAENGE = 1030', 4, 'Nutze \"(Spaltenname, 1, 1)\"!'),
 (9, 'Nenne alle Städte in Deutschland alphabetisch geordnet!\r\n', 'SELECT * FROM STADT WHERE L_ID=\"D\" ORDER BY L_ID', 5, 'Nutze \"ORDER BY L_ID\"!'),
 (10, 'Nenne wie viele Werte die Spalte L_ID der Tabelle Stadt hat!\r\n', 'SELECT COUNT(L_ID) FROM STADT', 3, 'Nutze \"COUNT()\"!'),
 (11, 'Nenne die Anzahl der vorhandenen Werte in der Spalte Einwohner, der Tabelle Stadt ,die über oder 1000000 Einwohner haben!', 'SELECT COUNT(EINWOHNER) FROM STADT WHERE EINWOHNER >= 1000000', 3, 'Nutze \"COUNT()\"!'),
