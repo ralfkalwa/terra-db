@@ -1,8 +1,8 @@
-import sqlite3
-import pandas as pd
-
 # for file handling
 import os
+
+import sqlite3
+import pandas as pd
 
 CONNECTION_OBJECT = "terra2023.db"
 SQL_FILE = "terra2023.sql"
