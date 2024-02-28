@@ -8,36 +8,8 @@
 
 import os
 import sqlite3
-import pandas as pd
 
 CONNECTION_OBJECT: str = "terra2023.db"
-SQL_FILE: str = "terra2023.sql"
-
-
-def run_query(q) -> pd.DataFrame:
-    """
-    function to return a pandas dataframe from a query
-    """
-    try:
-        with sqlite3.connect(CONNECTION_OBJECT) as conn:
-            # cur = conn.cursor()   #Obtain a cursor object
-            qr: pd.DataFrame = pd.read_sql_query(q, conn)
-    except sqlite3.Error as ex:
-        print(ex)
-    return qr
-
-
-def run_command(c) -> None:
-    """
-    function to run sqlite command
-    """
-    try:
-        with sqlite3.connect(CONNECTION_OBJECT) as conn:
-            # tells sqlite to autocommit any changes
-            conn.isolation_level = None
-            conn.execute(c)
-    except sqlite3.Error as ex:
-        print(ex)
 
 
 def execute_many_selects(cursor, queries: list) -> list:
@@ -76,7 +48,7 @@ db = sqlite3.connect(CONNECTION_OBJECT)
 cursor = db.cursor()
 
 # Execute the queries
-results: list = execute_many_selects(cursor, queries: list)
+results: list = execute_many_selects(cursor, queries)
 
 # Process the results (e.g., print or use them as needed)
 for result_set in results:
