@@ -53,7 +53,7 @@ def execute_many_selects(cursor, queries: list) -> list:
 # clear previous run
 try:
     os.open(CONNECTION_OBJECT, os.O_RDONLY)
-except os.open as ex_open:
+except OSError as ex_open:
     print(ex_open)
 
 # Read the contents of your .sql file
@@ -76,7 +76,7 @@ db = sqlite3.connect(CONNECTION_OBJECT)
 cursor = db.cursor()
 
 # Execute the queries
-results = execute_many_selects(cursor, queries)
+results: list = execute_many_selects(cursor, queries: list)
 
 # Process the results (e.g., print or use them as needed)
 for result_set in results:
