@@ -1,5 +1,5 @@
 """
-    this program will test the new generated terra DB file every time you call it
+    this program will check the new generated terra DB file
     Args:
         none
     Returns:
@@ -29,7 +29,7 @@ except OSError as ex_open:
     print(ex_open)
 
 # Read the contents of your .sql file
-queries: list = [
+qr: list = [
     'SELECT * FROM STADT WHERE EINWOHNER > 1000000 AND L_ID = "D";',
     'SELECT * FROM INSEL WHERE I_NAME LIKE "%ka%";',
     'SELECT * FROM BERG WHERE HOEHE > 3000;',
@@ -45,10 +45,10 @@ queries: list = [
 
 # Connect to your SQLite database
 db = sqlite3.connect(CONNECTION_OBJECT)
-cursor = db.cursor()
+cur = db.cursor()
 
 # Execute the queries
-results: list = execute_many_selects(cursor, queries)
+results: list = execute_many_selects(cur, qr)
 
 # Process the results (e.g., print or use them as needed)
 for result_set in results:
