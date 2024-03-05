@@ -7,17 +7,17 @@
 - this version is adapted for SQLite3 for local training SQL in absence of a DBMS like MySQL or similar.
 
  ---
- ## generate a new terra.db file:
 
-        python ./genTerraDB.py
+```python
+python ./genTerraDB.py
+````
+will generate a new terra.db file for SQLite3 every time you call it
 
-will generate a new terra.db file every time you call it
-
-### this version is derived from:
-[Original source "www.sachsen.schule" (MariaDB dump)](https://www.sachsen.schule/~terra/terra2023.sql)
+[Original terra2023.sql source from "www.sachsen.schule" (MariaDB dump)](https://www.sachsen.schule/~terra/terra2023.sql)
 
 
-### Unsolved issues
->none
+### TO DO
+>cleanup SQL script <br>
+>provide ER model
 ---
 ### enjoy 🍝 coding
