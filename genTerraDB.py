@@ -20,7 +20,7 @@ def run_query(q) -> pd.DataFrame:
     """
     try:
         with sqlite3.connect(CONNECTION_OBJECT) as conn:
-            # cur = conn.cursor()   #Obtain a cursor object
+            # retrieve sql query output
             qr: pd.DataFrame = pd.read_sql_query(q, conn)
     except sqlite3.Error as ex:
         print(ex)
