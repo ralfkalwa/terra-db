@@ -28,7 +28,7 @@ try:
 except OSError as ex_open:
     print(ex_open)
 
-# Read the contents of your .sql file
+# Multiple SELECT queries for testing
 qr: list = [
     'SELECT * FROM STADT WHERE EINWOHNER > 1000000 AND L_ID = "D";',
     'SELECT * FROM INSEL WHERE I_NAME LIKE "%ka%";',
@@ -47,7 +47,7 @@ qr: list = [
 db = sqlite3.connect(CONNECTION_OBJECT)
 cur = db.cursor()
 
-# Execute the queries
+# Execute multiple SELECT queries
 results: list = execute_many_selects(cur, qr)
 
 # Process the results (e.g., print or use them as needed)
